@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:test_app/app/core/colors.dart';
+import 'package:test_app/app/core/themes/colors.dart';
 
 class CalculatorScreen extends StatelessWidget {
   const CalculatorScreen({super.key});

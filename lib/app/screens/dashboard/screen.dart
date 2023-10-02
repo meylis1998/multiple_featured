@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:test_app/app/core/colors.dart';
+import 'package:test_app/app/core/themes/colors.dart';
+import 'package:test_app/app/screens/calculator/screen.dart';
+import 'package:test_app/app/screens/home/home.dart';
+import 'package:test_app/app/screens/weather/screen.dart';
 
 import '../../data/enums/enums.dart';
 import 'controller.dart';
@@ -10,10 +13,10 @@ import 'controller.dart';
 class Dashboard extends StatelessWidget {
   const Dashboard({super.key});
 
-  static final List<Widget> _widgetOptions = <Widget>[
-    Container(),
-    Container(),
-    Container(),
+  static const List<Widget> _widgetOptions = <Widget>[
+    HomeScreen(),
+    CalculatorScreen(),
+    WeatherScreen(),
   ];
 
   @override
@@ -64,15 +67,15 @@ class Dashboard extends StatelessWidget {
                   tabs: [
                     GButton(
                       icon: controller.tabIndex.value == BottomNavbar.home.index ? Iconsax.home_25 : Iconsax.home_2,
-                      text: 'home'.tr,
+                      text: 'Home',
                     ),
                     GButton(
                       icon: controller.tabIndex.value == BottomNavbar.calculator.index ? Iconsax.calculator5 : Iconsax.calculator,
-                      text: 'calculator',
+                      text: 'Calculator',
                     ),
                     GButton(
-                      icon: controller.tabIndex.value == BottomNavbar.weather.index ? Iconsax.cloud : Iconsax.cloud4,
-                      text: 'weather',
+                      icon: controller.tabIndex.value == BottomNavbar.weather.index ? Iconsax.cloud5 : Iconsax.cloud,
+                      text: 'Weather',
                     ),
                   ],
                 ),

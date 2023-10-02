@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:test_app/app/core/colors.dart';
+import 'package:test_app/app/core/themes/colors.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -8,16 +7,12 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body:  Center(
-        child: Text(
-          'This is Home screen',
-          style: Get.textTheme.bodyMedium?.copyWith(
-            fontSize: 25,
-            fontWeight: FontWeight.bold,
-            color: ThemeColor.mainColor,
-          ),
-        ),
+      appBar: AppBar(
+        backgroundColor: ThemeColor.white,
+        title: const Text('Home Screen'),
+      ),
+      body: const Center(
+        child: Text('This is Home screen'),
       ),
     );
   }
