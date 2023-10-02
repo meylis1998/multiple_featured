@@ -13,10 +13,10 @@ import 'controller.dart';
 class Dashboard extends StatelessWidget {
   const Dashboard({super.key});
 
-  static const List<Widget> _widgetOptions = <Widget>[
-    HomeScreen(),
+  static final List<Widget> _widgetOptions = <Widget>[
+    const HomeScreen(),
     CalculatorScreen(),
-    WeatherScreen(),
+    const WeatherScreen(),
   ];
 
   @override
