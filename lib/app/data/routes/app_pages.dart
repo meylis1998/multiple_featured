@@ -17,6 +17,6 @@ class AppPages {
     ),
     GetPage(name: AppRoutes.home, page: () => const HomeScreen()),
     GetPage(name: AppRoutes.calculator, page: () => CalculatorScreen()),
-    GetPage(name: AppRoutes.weather, page: () => const WeatherScreen()),
+    GetPage(name: AppRoutes.weather, page: () => WeatherScreen()),
   ];
 }

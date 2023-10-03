@@ -25,15 +25,19 @@ class CalculatorScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Obx(() => Text(
-                  '${controller.firstNumber.value} ${controller.operator.value} ${controller.secondNumber.value}',
-                  style: const TextStyle(fontSize: 24),
-                )),
+            Obx(
+              () => Text(
+                '${controller.firstNumber.value} ${controller.operator.value} ${controller.secondNumber.value}',
+                style: const TextStyle(fontSize: 24),
+              ),
+            ),
             const SizedBox(height: 20),
-            Obx(() => Text(
-                  controller.result.value,
-                  style: const TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
-                )),
+            Obx(
+              () => Text(
+                controller.result.value,
+                style: const TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
+              ),
+            ),
             const SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,

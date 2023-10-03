@@ -16,7 +16,7 @@ class Dashboard extends StatelessWidget {
   static final List<Widget> _widgetOptions = <Widget>[
     const HomeScreen(),
     CalculatorScreen(),
-    const WeatherScreen(),
+    WeatherScreen(),
   ];
 
   @override
