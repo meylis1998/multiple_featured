@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -14,13 +15,23 @@ class WeatherController extends GetxController {
   ).obs;
 
   final city = 'Saratov'.obs;
+  late Timer _timer; // Timer for periodic updates
 
   @override
   void onInit() {
     super.onInit();
     updateWeatherData();
-    // Обновляйте погодные данные каждые 2-3 секунды
-    ever(city, (_) => updateWeatherData());
+    // Start a timer to update data every 2-3 seconds
+    _timer = Timer.periodic(Duration(seconds: 3), (_) {
+      updateWeatherData();
+    });
+  }
+
+  @override
+  void onClose() {
+    super.onClose();
+    // Cancel the timer when the controller is disposed to prevent memory leaks
+    _timer.cancel();
   }
 
   void updateWeatherData() async {
